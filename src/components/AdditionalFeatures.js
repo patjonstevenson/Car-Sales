@@ -1,21 +1,23 @@
 import React from 'react';
 import AdditionalFeature from './AdditionalFeature';
 
+
 const AdditionalFeatures = props => {
   return (
     <div className="content">
       <h4>Additional Features</h4>
-      {props.store.length ? (
+      {props.additionalFeatures.length ? (
         <ol type="1">
-          {props.store.map(item => (
-            <AdditionalFeature key={item.id} feature={item} />
+          {props.additionalFeatures.map(feature => (
+            <AdditionalFeature key={feature.id} feature={feature} addFeature={props.addFeature} />
           ))}
         </ol>
       ) : (
-        <p>Nice looking car!</p>
-      )}
+          <p>Nice looking car!</p>
+        )}
     </div>
   );
 };
+
 
 export default AdditionalFeatures;
